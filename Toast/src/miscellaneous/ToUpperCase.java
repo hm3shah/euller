@@ -8,12 +8,21 @@ import org.junit.Test;
 //"the quick brown fox" -> "The Quick Brown Fox"
 
 public class ToUpperCase {
+
+	@Test
+	public void testToUpperCase() {
+		assertEquals(toUpperCase("the quick brown fox"),"The Quick Brown Fox");
+		assertEquals(toUpperCase("the "),"The ");
+		assertEquals(toUpperCase(null),null);
+	}
+	
 	public String toUpperCase(String str) {
 		//Check if the str is null
 		if(str==null) {
 			return str;
 		}
 	    char[] temp = str.toCharArray();
+	    //StringBuffer is synchronized, StringBuilder is not.
 	    StringBuilder upperStr = new StringBuilder();
 	    upperStr.append(Character.toUpperCase(temp[0]));
 	    for(int i=1;i<temp.length;++i) {
@@ -25,11 +34,4 @@ public class ToUpperCase {
 	    }
 	    return upperStr.toString();
 	}
-	
-	@Test
-	public void testToUpperCase() {
-		assertEquals(toUpperCase("the quick brown fox"),"The Quick Brown Fox");
-		assertEquals(toUpperCase("the "),"The ");
-		assertEquals(toUpperCase(null),null);
-	}
-}
+}	
