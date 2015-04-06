@@ -13,9 +13,20 @@ Find the difference between the sum of the squares of the first one hundred natu
 
 public class Program6 {
 
+	public int sumOfSquares(int number) {
+		int result = number*(number+1)*(2*number+1)/6;
+		return result;
+	}
+	
+	public int squareofSum(int number) {
+		int result = number*(number+1)/2;
+		return result*result;
+	}
 	
 	public static void main(String[] args) {
-		System.out.println(Integer.MAX_VALUE);
-		System.out.println(Integer.MIN_VALUE);
+		Program6 temp = new Program6();
+		System.out.println(temp.squareofSum(100)-temp.sumOfSquares(100)); //25164150
+
+		
 	}
 }
