@@ -11,7 +11,7 @@ Hence the difference between the sum of the squares of the first ten natural num
 Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.*/
 
 
-public class Program6 {
+public class Problem6 {
 
 	public int sumOfSquares(int number) {
 		int result = number*(number+1)*(2*number+1)/6;
@@ -24,7 +24,7 @@ public class Program6 {
 	}
 	
 	public static void main(String[] args) {
-		Program6 temp = new Program6();
+		Problem6 temp = new Problem6();
 		System.out.println(temp.squareofSum(100)-temp.sumOfSquares(100)); //25164150
 
 		
