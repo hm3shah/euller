@@ -21,6 +21,7 @@ public class NextHigherNumber {
 		assertEquals(nextHigherNumber(2143),2314); //2134 -> 2143 -> 2314 ->2341 ->2413
 		assertEquals(nextHigherNumber(2314),2341); //2134 -> 2143 -> 2314 ->2341 ->2413
 		assertEquals(nextHigherNumber(2341),2413); //2134 -> 2143 -> 2314 ->2341 ->2413
+		assertEquals(nextHigherNumber(2431),3124); //2134 -> 2143 -> 2314 ->2341 ->2413
 
 	}
 
@@ -30,7 +31,6 @@ public class NextHigherNumber {
 		char[] result = num.toCharArray();
 		char[] c = num.toCharArray();
 		Arrays.sort(c);
-		System.out.println();
 		int biggest = num.indexOf(c[c.length-1]);
 		char[] temp = Arrays.copyOfRange(result, biggest-1, result.length);
 		Arrays.sort(temp);
