@@ -18,32 +18,32 @@ import org.junit.Test;
  */
 public class GetSecondLargestFromBST {
 
-	Node tree1;
-	Node tree2;
-	Node tree3;
-	Node tree4;
+	TreeNode tree1;
+	TreeNode tree2;
+	TreeNode tree3;
+	TreeNode tree4;
 	
 	@Before
 	public void createAndNodesToTree() {
-		tree1 = new Node(5);
-		tree1.left = new Node(3);
-		tree1.right = new Node(7);
+		tree1 = new TreeNode(5);
+		tree1.left = new TreeNode(3);
+		tree1.right = new TreeNode(7);
 		//tree1.right.left= new Node(6);
 		
-		tree2 = new Node(7);
-		tree2.left=new Node(5);
-		tree2.left.left=new Node(4);
-		tree2.left.left.left=new Node(2);
+		tree2 = new TreeNode(7);
+		tree2.left=new TreeNode(5);
+		tree2.left.left=new TreeNode(4);
+		tree2.left.left.left=new TreeNode(2);
 		
-		tree3 = new Node(2);
-		tree3.right = new Node(4);
-		tree3.right.right=new Node(6);
-		tree3.right.right.right= new Node(10);
+		tree3 = new TreeNode(2);
+		tree3.right = new TreeNode(4);
+		tree3.right.right=new TreeNode(6);
+		tree3.right.right.right= new TreeNode(10);
 		
-		tree4 = new Node(5);
-		tree4.left = new Node(3);
-		tree4.right = new Node(7);
-		tree4.left.right= new Node(4);
+		tree4 = new TreeNode(5);
+		tree4.left = new TreeNode(3);
+		tree4.right = new TreeNode(7);
+		tree4.left.right= new TreeNode(4);
 		
 	}
 	
@@ -61,13 +61,13 @@ public class GetSecondLargestFromBST {
 		assertEquals(getSecondLargestSmart(tree4),5);
 	}
 	
-	private int getSecondLargestFromBst(Node root){
+	private int getSecondLargestFromBst(TreeNode root){
 		List<Integer> bstArray = toArray(root);
 		int arraySize = bstArray.size();
 		return bstArray.get(arraySize-2);
 	}
 
-	private List<Integer> toArray(Node node) {
+	private List<Integer> toArray(TreeNode node) {
 		if(node==null) {
 			return null;
 		}
@@ -76,7 +76,7 @@ public class GetSecondLargestFromBST {
 		return bstArrayList;
 	}
 
-	private void toArrayHelper(Node node, List<Integer> bstArrayList) {
+	private void toArrayHelper(TreeNode node, List<Integer> bstArrayList) {
 		if(node==null) {
 			return;
 		} else {
@@ -86,7 +86,7 @@ public class GetSecondLargestFromBST {
 		}
 	}
 	
-	private int getSecondLargestSmart(Node root) {
+	private int getSecondLargestSmart(TreeNode root) {
 		if(root==null) {
 			return -1;
 		}
@@ -99,7 +99,7 @@ public class GetSecondLargestFromBST {
 		return (getSecondLargestSmart(root.right));
 	}
 
-	private int getLargest(Node root) {
+	private int getLargest(TreeNode root) {
 		if(root.right!=null) {
 			return getLargest(root.right);
 		}
