@@ -1,16 +1,10 @@
 package miscellaneous;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
 import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
-import java.util.Stack;
-import java.util.TreeMap;
 
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 public class NextHigherNumber {
 	
