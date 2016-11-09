@@ -59,10 +59,9 @@ public class UberInterview {
 
     private void swap(List<Integer> array, Integer integer1, Integer integer2) {
         int temp = array.get(integer1);
-        array.set(array.get(integer2), integer1);
-        array.set(temp, integer2);
+        array.set(integer1, array.get(integer2));
+        array.set(integer2, temp);
     }
-
 
     public int random() {
         Random random = new Random();
