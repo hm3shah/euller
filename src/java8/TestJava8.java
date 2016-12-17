@@ -10,6 +10,8 @@ public class TestJava8 {
             int y = x;
             return y + 1;
         };
+
+        Function<Integer, Integer> add = x -> x + 1;
         System.out.println(add1.apply(1));
 
         Thread t = new Thread(()->{
